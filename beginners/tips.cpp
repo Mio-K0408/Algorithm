@@ -44,6 +44,13 @@ int main() {
         cin >> A[i]; // 入力を整数型動的配列 として受け取る
     }
 
+    /*
+		  文字列の受け取り
+    */
+    string s;
+    getline(cin, s); // in:I have a pen.
+    cout << "一行目 " << s << endl; //out:一行目 I have a pen.
+
 
   // -----------------------------------------
   /*
@@ -54,6 +61,16 @@ int main() {
   string S = "ABCDE";
   cout << S.substr(0,1) << endl;
   cout << S[0] << endl;
+  cout << S.at(0) << endl;
+
+  // -----------------------------------------
+  /*
+    文字数取得
+  */
+  string str = "Hello";
+  cout << str.size() << endl; // 5
+  cout << "Hello"s.size() << endl; // 5（sを末尾につける）
+  cout << "Hello".size() << endl; // できない
 
   // -----------------------------------------
   /*
@@ -67,6 +84,30 @@ int main() {
   string S = "ABCDE";
   string N1(1, S[2]);
   cout << N1 << endl; //out:C
+
+  // -----------------------------------------
+  /*
+    型変換（char → int）
+  */
+  string N;
+  cin >> N;
+  int count = 0;
+  for(int i =0;i<N.length();i++){
+    // char → intに変換
+    count += int(N[i]-'0');
+  }
+
+  // -----------------------------------------
+  /*
+    型変換（string ⇔ int）
+  */
+  // string → int
+  string S = "123";
+  int N = stoi(S);
+
+  // int → string
+  int N = 789;
+  string S = to_string(N);
 
   // -----------------------------------------
   /*

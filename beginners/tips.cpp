@@ -81,6 +81,21 @@ int main() {
   cout << "Hello"s.size() << endl; // 5（sを末尾につける）
   cout << "Hello".size() << endl; // できない
 
+    // -----------------------------------------
+
+  /*
+    文字種判定      
+  */
+  int N;
+  string S;
+  cin >> N >> S;
+  for(int i=0;i<N;i++){
+      if(isupper(S[i])) cout << "uppercase" << endl; // 大文字
+      else if(islower(S[i])) cout << "lowercase" << endl; // 小文字
+      else if(isdigit(S[i])) cout << "digit" << endl; // 数値
+      else cout << S[i] << endl;
+  }
+
   // -----------------------------------------
 
   /*

@@ -51,6 +51,21 @@ int main() {
     getline(cin, s); // in:I have a pen.
     cout << "一行目 " << s << endl; //out:一行目 I have a pen.
 
+    /*
+      受け取り文字の有無でループ判定
+      受け取る文字がある間はずっとループを回す。
+      型宣言しているのでそれにマッチする値だけを取れる。
+      ※ Pythonはできない気がする
+      in:a3x1c10
+      out:aaaxcccccccccc
+    */
+    char c;
+    while (cin >> c) {
+        int n; cin >> n;
+        for (int i = 0; i < n; i++) {
+            cout << c;
+        }
+    }    
 
   // -----------------------------------------
   /*
@@ -133,9 +148,23 @@ int main() {
   cin >> N;
   int count = 0;
   for(int i =0;i<N.length();i++){
-    // char → intに変換
+    // char → intに変換※int()省略可
     count += int(N[i]-'0');
   }
+
+  
+  // -----------------------------------------
+  /*
+    型変換（int → char）
+  */
+  // 数値を変換したいとき
+  N[i] = (a+3)%10 + '0';
+
+  // その他
+  int i = 97;
+  char ch = (char) i;
+  cout << ch << endl; //out:a
+
 
   // -----------------------------------------
   /*
